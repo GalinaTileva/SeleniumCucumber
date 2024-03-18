@@ -66,5 +66,4 @@ public class TestBeforeAfter {
         System.out.println("TestMethod2: This is test method 2.");
     }
 
-
 }
