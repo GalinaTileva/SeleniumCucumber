@@ -96,7 +96,7 @@ public class CheckoutOne {
         WebElement continueButton = driver.findElement(By.cssSelector("#continue"));
         continueButton.click();
 
-        WebElement errorMess = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorMess = driver.findElement(By.cssSelector(".error-message.txt-container"));
         String message = errorMess.getText();
         assertEquals(message, "Error: First Name is required");
     }
@@ -111,7 +111,7 @@ public class CheckoutOne {
         WebElement continueButton = driver.findElement(By.cssSelector("#continue"));
         continueButton.click();
 
-        WebElement errorMess = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorMess = driver.findElement(By.cssSelector(".error-message.txt-container"));
         String message = errorMess.getText();
         assertEquals(message, "Error: First Name is required");
     }
@@ -126,7 +126,7 @@ public class CheckoutOne {
         WebElement continueButton = driver.findElement(By.cssSelector("#continue"));
         continueButton.click();
 
-        WebElement errorMess = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorMess = driver.findElement(By.cssSelector(".error-message.txt-container"));
         String message = errorMess.getText();
         assertEquals(message, "Error: Last Name is required");
 
@@ -142,7 +142,7 @@ public class CheckoutOne {
         WebElement continueButton = driver.findElement(By.cssSelector("#continue"));
         continueButton.click();
 
-        WebElement errorMess = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorMess = driver.findElement(By.cssSelector(".error-message.txt-container"));
         String message = errorMess.getText();
         assertEquals(message, "Error: Postal Code is required");
     }

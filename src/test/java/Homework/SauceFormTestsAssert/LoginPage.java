@@ -48,7 +48,7 @@ public class LoginPage {
         WebElement loginButton = driver.findElement(By.cssSelector("#login-button"));
         loginButton.click();
 
-        WebElement errorCont = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorCont = driver.findElement(By.cssSelector(".error-message.txt-container"));
         String test = errorCont.getText();
         assertEquals(test,"Epic sadface: Sorry, this user has been locked out.");
 
@@ -64,7 +64,7 @@ public class LoginPage {
         WebElement loginButton = driver.findElement(By.cssSelector("#login-button"));
         loginButton.click();
 
-        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message.txt-container"));
 
         String errorMessage = errorMessCont.getText();
 
@@ -76,7 +76,7 @@ public class LoginPage {
         WebElement loginButton = driver.findElement(By.cssSelector("#login-button"));
         loginButton.click();
 
-        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message.txt-container"));
         String errorMess = errorMessCont.getText();
         assertEquals(errorMess, "Epic sadface: Username is required");
     }
@@ -89,7 +89,7 @@ public class LoginPage {
         WebElement loginButton = driver.findElement(By.cssSelector("#login-button"));
         loginButton.click();
 
-        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message.txt-container"));
         String message = errorMessCont.getText();
         assertEquals(message, "Epic sadface: Username is required");
     }
@@ -102,7 +102,7 @@ public class LoginPage {
         WebElement loginButton = driver.findElement(By.cssSelector("#login-button"));
         loginButton.click();
 
-        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message.txt-container"));
         String message = errorMessCont.getText();
         assertEquals(message, "Epic sadface: Password is required");
     }
@@ -116,7 +116,7 @@ public class LoginPage {
         passwordField.sendKeys(" ");
         WebElement loginButton = driver.findElement(By.cssSelector("#login-button"));
         loginButton.click();
-        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message-container"));
+        WebElement errorMessCont = driver.findElement(By.cssSelector(".error-message.txt-container"));
 
         String errorMessColor = errorMessCont.getCssValue("background-color");
         assertEquals(errorMessColor, "rgba(226, 35, 26, 1)");

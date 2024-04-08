@@ -92,20 +92,30 @@ public class CheckoutTwo {
         }
     }
 
-    /*@Test
+    @Test
     public void itemOneQuantity() {
-        WebElement itemQty = driver.findElement(By.cssSelector(""));
+        WebElement itemQty = driver.findElement(By.xpath
+                ("//*[@id=\"checkout_summary_container\"]/div/div[1]/div[3]/div[1]"));
+        String qty = itemQty.getText();
+        assertEquals(qty, "1");
     }
 
     @Test
     public void itemOneText() {
-        WebElement itemText = driver.findElement(By.cssSelector(""));
+        WebElement itemText = driver.findElement(By.xpath
+                ("//*[@id=\"checkout_summary_container\"]/div/div[1]/div[3]/div[2]/div[1]"));
+        String text = itemText.getText();
+        assertEquals(text, "Rib snap infant onesie for the junior automation engineer in development. " +
+                "Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.");
     }
 
     @Test
     public void itemOnePrice() {
-        WebElement itemPrice = driver.findElement(By.cssSelector(""));
-    }*/
+        WebElement itemPrice = driver.findElement(By.xpath
+                ("//*[@id=\"checkout_summary_container\"]/div/div[1]/div[3]/div[2]/div[2]/div"));
+        String price = itemPrice.getText();
+        assertEquals(price, "$7.99");
+    }
 
     @Test
     public void itemTwoTitle() {
@@ -115,45 +125,70 @@ public class CheckoutTwo {
         }
     }
 
-    /*@Test
+    @Test
     public void itemTwoQuantity() {
-        WebElement itemQty = driver.findElement(By.cssSelector(""));
+        WebElement itemQty = driver.findElement(By.xpath
+                ("//*[@id=\"checkout_summary_container\"]/div/div[1]/div[4]/div[1]"));
+        String qty = itemQty.getText();
+        assertEquals(qty, "1");
     }
 
     @Test
     public void itemTwoText() {
-        WebElement itemText = driver.findElement(By.cssSelector(""));
+        WebElement itemText = driver.findElement(By.xpath
+                ("//*[@id=\"checkout_summary_container\"]/div/div[1]/div[4]/div[2]/div[1]"));
+        String text = itemText.getText();
+        assertEquals(text, "This classic Sauce Labs t-shirt is perfect to wear when cozying up to your " +
+                "keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.");
     }
 
     @Test
     public void itemTwoPrice() {
-        WebElement itemPrice = driver.findElement(By.cssSelector(""));
-    }*/
+        WebElement itemPrice = driver.findElement(By.xpath
+                ("//*[@id=\"checkout_summary_container\"]/div/div[1]/div[4]/div[2]/div[2]/div"));
+        String price = itemPrice.getText();
+        assertEquals(price, "$15.99");
+    }
 
-   /* @Test
+    @Test
     public void paymentInfo() {
-        WebElement payment = driver.findElement(By.cssSelector(""));
+        WebElement paymentInfo = driver.findElement(By.xpath("//*/div[text() = 'Payment Information']"));
+        String payment = paymentInfo.getText();
+        assertEquals(payment, "Payment Information");
     }
 
     @Test
     public void paymentValue() {
-        WebElement paymentValue = driver.findElement(By.cssSelector(""));
+        WebElement paymentValue = driver.findElement(By.xpath("//*/div[text() = 'SauceCard #31337']"));
+        if (paymentValue.isDisplayed()) {
+            System.out.println("Card details are displayed.");
+        }
     }
 
     @Test
     public void shipInfo() {
-        WebElement shipInfo = driver.findElement(By.cssSelector(""));
+        WebElement shipInfo = driver.findElement(By.xpath("//*/div[text() = 'Shipping Information']"));
+        if (shipInfo.isDisplayed()) {
+            System.out.println("Shipping information is displayed.");
+        }
     }
 
     @Test
     public void shipInfoText() {
-        WebElement shipInfoText = driver.findElement(By.cssSelector(""));
+        WebElement shipInfoText = driver.findElement(By.xpath
+                ("//*/div[text() = 'Free Pony Express Delivery!']"));
+        if (shipInfoText.isDisplayed()) {
+            System.out.println("Informative text about delivery is displayed.");
+        }
     }
 
     @Test
     public void priceTotal() {
-        WebElement priceTotal = driver.findElement(By.cssSelector(""));
-    }*/
+        WebElement priceTotal = driver.findElement(By.xpath("//*/div[text() = 'Price Total']"));
+        if (priceTotal.isDisplayed()) {
+            System.out.println("Price total is displayed.");
+        }
+    }
 
     @Test
     public void itemTotal() {
@@ -171,10 +206,13 @@ public class CheckoutTwo {
         }
     }
 
-    /*@Test
+    @Test
     public void total() {
-        WebElement total = driver.findElement(By.cssSelector(""));
-    }*/
+        WebElement total = driver.findElement(By.xpath
+                ("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[8]"));
+        String tl = total.getText();
+        assertEquals(tl, "Total: $25.90");
+    }
 
     @Test
     public void cancel() {

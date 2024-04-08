@@ -98,29 +98,36 @@ public class CartPage {
         assertEquals(onesieCheck, "Sauce Labs Onesie");
     }
 
-    /* @Test
+    @Test
     public void onesieQuantity() {
-        WebElement quantity = driver.findElement(By.cssSelector("?"));
+        WebElement qty = driver.findElement(By.xpath
+                ("//*[@id=\"cart_contents_container\"]/div/div[1]/div[3]/div[1]"));
+        String qtyCheck = qty.getText();
+        assertEquals(qtyCheck, "1");
     }
 
-    @Test
+     @Test
     public void onesieText() {
-        WebElement onesieText = driver.findElement(By.cssSelector("??"));
+        WebElement onesieText = driver.findElement(By.xpath
+                ("//*[@id=\"cart_contents_container\"]/div/div[1]/div[3]/div[2]/div[1]"));
         String onesieTextCheck = onesieText.getText();
-        assertEquals(onesieTextCheck, "Rib snap infant onesie for the junior automation engineer in development.
-        Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel."
+        assertEquals(onesieTextCheck, "Rib snap infant onesie for the junior automation engineer in development. " +
+                "Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.");
     }
 
     @Test
     public void onesiePrice() {
-        WebElement onesiePrice = driver.findElement(By.cssSelector("??"))
-    }*/
+        WebElement onesiePrice = driver.findElement(By.xpath
+                ("//*[@id=\"cart_contents_container\"]/div/div[1]/div[3]/div[2]/div[2]/div"));
+        String price = onesiePrice.getText();
+        assertEquals(price, "$7.99");
+    }
 
     @Test
     public void onesieRemove() {
         WebElement onesieRemove = driver.findElement(By.cssSelector("#remove-sauce-labs-onesie"));
         if (onesieRemove.isDisplayed()) {
-            System.out.println("Remove button presented for item Sauce Labs Onesie.");
+            System.out.println("Remove button presented for item 'Sauce Labs Onesie'.");
         }
     }
 
@@ -131,28 +138,38 @@ public class CartPage {
         assertEquals(shirtTitle, "Test.allTheThings() T-Shirt (Red)");
     }
 
-    /* @Test
+     @Test
     public void redShirtQuantity() {
-        WebElement quantity = driver.findElement(By.cssSelector("?"));
+        WebElement quantity = driver.findElement(By.xpath
+                ("//*[@id=\"cart_contents_container\"]/div/div[1]/div[4]/div[1]"));
+        String qty = quantity.getText();
+        assertEquals(qty, "1");
     }
 
     @Test
     public void redShirtText() {
-        WebElement redShirtText = driver.findElement(By.cssSelector("??"));
+        WebElement redShirtText = driver.findElement(By.xpath
+                ("//*[@id=\"cart_contents_container\"]/div/div[1]/div[4]/div[2]/div[1]"));
         String redShirtTextCheck = redShirtText.getText();
-        assertEquals(redShirtTextCheck, "This classic Sauce Labs t-shirt is perfect to wear when cozying up to your
-        keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton."
+        assertEquals(redShirtTextCheck, "This classic Sauce Labs t-shirt is perfect to wear when cozying up" +
+                " to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.");
     }
 
     @Test
     public void redShirtPrice() {
-        WebElement redShirtPrice = driver.findElement(By.cssSelector("??"))
-    }*/
+        WebElement redShirtPrice = driver.findElement(By.xpath
+                ("//*[@id=\"cart_contents_container\"]/div/div[1]/div[4]/div[2]/div[2]/div"));
+        String price = redShirtPrice.getText();
+        assertEquals(price, "$15.99");
+    }
 
     @Test
     public void redShirtRemove() {
         WebElement redShirtRemove = driver.findElement(By.cssSelector
                 ("[name='remove-test.allthethings()-t-shirt-(red)']"));
+        if (redShirtRemove.isDisplayed()) {
+            System.out.println("Remove button displayed for item 'Test.allTheThings() T-Shirt (Red)'.");
+        }
     }
 
     @Test
