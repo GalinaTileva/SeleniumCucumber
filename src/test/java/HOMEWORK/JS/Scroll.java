@@ -1,4 +1,4 @@
-package Homework.JS;
+package HOMEWORK.JS;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

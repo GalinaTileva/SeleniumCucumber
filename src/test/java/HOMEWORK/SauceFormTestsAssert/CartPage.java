@@ -1,4 +1,4 @@
-package Homework.SauceFormTestsAssert;
+package HOMEWORK.SauceFormTestsAssert;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

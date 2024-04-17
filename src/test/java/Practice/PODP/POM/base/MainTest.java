@@ -1,6 +1,7 @@
 package Practice.PODP.POM.base;
 
 import Practice.PODP.Driver.DriverFactory;
+import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -14,6 +15,9 @@ import org.testng.annotations.BeforeMethod;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -72,10 +76,14 @@ public class MainTest {
 
             String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
             String fileName = result.getName() + "_" + timestamp + ".png";
+            Path path = Paths.get("./Screenshots", fileName);
 
             try {
-                FileUtils.copyFile(source, new File("./Screenshots/" + fileName));
-                System.out.println("Screenshot taken: " + fileName);
+                Files.copy(source.toPath(),path);
+                Allure.addAttachment("Screenshot on Failure", "image/png", Files.newInputStream(path), ".png");
+
+               /* FileUtils.copyFile(source, new File("./Screenshots/" + fileName));
+                System.out.println("Screenshot taken: " + fileName);*/
             } catch (IOException e) {
                 e.printStackTrace();
             }

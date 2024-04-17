@@ -5,30 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ProductsPage extends BasePage {
-    //private WebDriver driver;
-
+    // Assuming there's an element to verify on the Products page, like a header
     @FindBy(className = "title")
     private WebElement pageTitle;
 
-    public ProductsPage (WebDriver driver) {
-        super(driver);
-    }
 
     public String getPageTitle() {
         return pageTitle.getText();
     }
 
-    public void addProduct() {
-        item.click();
-    }
-
-    public void openShoppingCart() {
-        waitForElementToBeVisible(shoppingCartBadge);
-        shoppingCartBadge.click();
-    }
-
-    public HeaderComponent header() {
-        return new HeaderComponent(driver);
+    public HeaderComponent header (){
+        return new HeaderComponent();
     }
 
 }

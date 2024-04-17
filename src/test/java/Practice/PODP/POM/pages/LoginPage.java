@@ -1,5 +1,6 @@
 package Practice.PODP.POM.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,43 +8,41 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPage extends BasePage {
    // private WebDriver driver;
 
-    @FindBy(id = "user-name")          //или private By userName = By.id("user-name"); така няма нужда от конструктор.
-    private WebElement usernameInput;
+    @FindBy(id = "user-name")
+    private WebElement usernameField;
 
     @FindBy(id = "password")
-    private WebElement passwordInput;
+    private WebElement passwordField;
 
     @FindBy(id = "login-button")
     private WebElement loginButton;
 
-    // конструктор: // винаги еднакво с името на класа
-    public LoginPage (WebDriver driver) {
+    @FindBy(css = ".error-message-container")
+    private WebElement errorMessageContainer;
 
-        /*this.driver = driver;
-        PageFactory.initElements(driver, this);*/
-
-        super(driver);
+    @Step("Set Username")
+    public void setUsername(String username) {
+        usernameField.clear();
+        usernameField.sendKeys(username);
     }
 
-
-
-    public void setUsername (String username) {
-        usernameInput.sendKeys(username);
+    @Step("Set Password")
+    public void setPassword(String password) {
+        passwordField.clear();
+        passwordField.sendKeys(password);
     }
 
-    public void setPassword (String password) {
-        passwordInput.sendKeys(password);
-    }
-
-    public ProductsPage clickLoginButton() {
+    public void clickLoginButton() {
         loginButton.click();
-        return new ProductsPage(driver);
     }
 
-
-    public void loginAs(String username, String secretSauce) {
+    public void loginAs(String username, String password) {
         setUsername(username);
-        setPassword(secretSauce);
+        setPassword(password);
         clickLoginButton();
+    }
+
+    public String getErrorMessage() {
+        return errorMessageContainer.getText();
     }
 }

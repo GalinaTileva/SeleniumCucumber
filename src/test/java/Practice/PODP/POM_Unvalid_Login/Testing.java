@@ -7,7 +7,7 @@ public class Testing extends Driver {
 
     @Test
     public void errorLogin() {
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage();
         loginPage.setUsername("error_user");
         loginPage.setPassword("secret_sauce");
 

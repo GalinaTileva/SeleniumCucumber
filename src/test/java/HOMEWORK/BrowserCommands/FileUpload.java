@@ -1,15 +1,16 @@
-package Homework.BrowserCommands;
+package HOMEWORK.BrowserCommands;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ColorPicker {
+import java.io.File;
+
+public class FileUpload {
     WebDriver driver;
 
     @BeforeMethod
@@ -18,13 +19,14 @@ public class ColorPicker {
     }
 
     @Test
-    public void pickColor() {
+    public void upload() {
         driver.get("https://www.selenium.dev/selenium/web/web-form.html");
-        WebElement colorPicker = driver.findElement(By.cssSelector("[name='my-colors']"));
+        WebElement fileInput = driver.findElement(By.cssSelector("[name='my-file']"));
 
-        Actions moveSlider = new Actions(driver);
-        moveSlider.clickAndHold(colorPicker).moveByOffset(-40,20).perform();
+        String filePath = "C:\\Users\\HP\\IdeaProjects\\SeleniumDemo\\src\\test\\java\\Homework\\Resource\\message.txt";
+        //oт папка Resources
 
+        fileInput.sendKeys(new File(filePath).getAbsolutePath());
     }
 
 

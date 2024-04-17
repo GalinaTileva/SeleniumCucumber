@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class DriverFactory {
 
-    //този клас отговаря само за инициализация и настройки на драйвъра, също и пренасянето му.
+    // този клас отговаря само за инициализация и настройки на драйвъра, също и пренасянето му.
     // suite.xml задава настройка за нишково изпълнение на тестовете
 
     // складиране на инстанции(драйвъри) на опр. място (подобно на списък) в паметта поотделно, като нишки
@@ -35,6 +35,10 @@ public class DriverFactory {
         options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.DISMISS);
 
         options.setExperimentalOption("mobileEmulation", mobileEmulation);
+
+        //headless testing
+        //
+        // options.addArguments("headless=true");
 
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();

@@ -12,14 +12,14 @@ public class ProductsPageTest extends MainTest {
 
     @BeforeMethod
     public void loginBefore() {
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage();
         loginPage.loginAs("standard_user", "secret_sauce");
 
     }
 
     @Test
     public void canOpenCartPage() {
-        productsPage = new ProductsPage(driver);
+        productsPage = new ProductsPage();
         productsPage.header().openCartByIcon();
 
     }

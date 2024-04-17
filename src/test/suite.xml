@@ -4,7 +4,10 @@
 <suite name="Test Demo Suite" parallel="classes" thread-count="4">
     <test name="Selenium Course Suite tests">
         <packages>
-            <package name="org.selenium.tests.*"/>
+            <package name="Practice.PODP.POM.tests.*"/>
         </packages>
     </test>
+    <listeners>
+        <listener class-name="org.testng.reporters.XMLReporter"/>
+    </listeners>
 </suite>
